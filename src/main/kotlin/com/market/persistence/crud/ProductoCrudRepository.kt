@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository
 import java.util.*
 
 interface ProductoCrudRepository : CrudRepository<Producto, Int> {
-    fun findByIdCategoria(idCategoria: Int): Producto
+    fun findByIdCategoria(idCategoria: Int): Optional<List<Producto>>
     fun findByCantidadStockLessThanAndEstado(cantidadStock: Int, estado: Boolean): Optional<List<Producto>>
 }
