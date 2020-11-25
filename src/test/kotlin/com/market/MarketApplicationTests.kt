@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBootTest
 class MarketApplicationTests {
 
-	@Test
+	//@Test
 	fun contextLoads() {
 	}
 

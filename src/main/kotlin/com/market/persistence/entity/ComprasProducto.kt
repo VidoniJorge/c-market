@@ -1,10 +1,9 @@
 package com.market.persistence.entity
 
-import javax.persistence.Column
-import javax.persistence.EmbeddedId
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
+@Entity
+@Table(name = "compras_productos")
 class ComprasProducto(
         @EmbeddedId
         val comprasProducto: ComprasProductoPK,
@@ -20,11 +19,11 @@ class ComprasProducto(
 
         @ManyToOne
         @JoinColumn(name = "id_compra", insertable = false, updatable = false)
-        val compra: Compra?,
+        var compra: Compra?,
 
         @ManyToOne
         @JoinColumn(name = "id_producto", insertable = false, updatable = false)
-        val producto: Producto?
+        var producto: Producto?
 ) {
     constructor() : this(ComprasProductoPK(0, 0), 0, 0.0, false, null, null)
 }

@@ -32,6 +32,7 @@ class ProductoRepository(val reposiroty: ProductoCrudRepository, val mapper: Pro
     }
 
     override fun save(product: Product): Product {
+        val produto = mapper.toProducto(product)
         return mapper.toProduct(reposiroty.save(mapper.toProducto(product)))
     }
 

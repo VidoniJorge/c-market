@@ -1,4 +1,8 @@
 package com.market.domain
 
-class Category(id: Int, category: String, active: Boolean) {
+data class Category(var id: Int,
+               var description: String,
+               var active: Boolean) {
+    constructor(): this(0,"",false)
+
 }

@@ -1,9 +1,11 @@
 package com.market.domain
 
-class Product(id: Int,
-              name: String,
-              price: Double,
-              stock: Int,
-              active: Boolean,
-              category: Category) {
+data class Product(var id: Int,
+                   var name: String,
+                   var categoryId: Int,
+                   var price: Double,
+                   var stock: Int,
+                   var active: Boolean,
+                   var category: Category?) {
+    constructor() : this(0, "", 0,0.0, 0, false, null)
 }

@@ -30,7 +30,7 @@ data class Compra(
         @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
         val client: Cliente?,
 
-        @OneToMany(mappedBy = "producto")
+        @OneToMany(mappedBy = "compra")
         val productos: List<ComprasProducto>?
 ) {
     constructor() : this(0, 0, LocalDateTime.now(), "", "", "", null, null)

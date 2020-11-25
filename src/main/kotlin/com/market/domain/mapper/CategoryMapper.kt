@@ -2,17 +2,15 @@ package com.market.domain.mapper
 
 import com.market.domain.Category
 import com.market.persistence.entity.Categoria
-import org.mapstruct.InheritInverseConfiguration
-import org.mapstruct.Mappings
-import org.mapstruct.Mapper
-import org.mapstruct.Mapping
+import org.mapstruct.*
+import org.springframework.stereotype.Component
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",unmappedTargetPolicy = ReportingPolicy.IGNORE)
 interface CategoryMapper {
 
     @Mappings(
         Mapping(source = "idCategoria", target = "id"),
-        Mapping(source = "descripcion", target = "category"),
+        Mapping(source = "descripcion", target = "description"),
         Mapping(source = "estado", target = "active")
     )
     fun toCategory(categoria: Categoria): Category

@@ -10,7 +10,7 @@ data class Categoria(
         @Column(name = "id_categoria")
         val idCategoria: Int,
 
-        @Column(name = "descripcion")
+        @Column(name = "description")
         val descripcion: String,
 
         @Column(name = "estado")
