@@ -11,7 +11,6 @@ import java.util.*
 @Repository
 class CompraRepository(var repository: CompraCrudRepository, var mapper: PurcheseMapper) : PurchaseRepository {
     override fun getAll(): List<Purchese> {
-        var ff = repository.findAll()
         return mapper.toPurcharses(repository.findAll() as List<Compra>)
     }
 

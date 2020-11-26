@@ -27,6 +27,10 @@ dependencies {
 	annotationProcessor ("org.mapstruct:mapstruct-processor:1.4.1.Final")
 	kapt("org.mapstruct:mapstruct-processor:1.3.1.Final")
 
+	//Swagger
+	implementation ("io.springfox:springfox-swagger2:2.9.2")
+	implementation ("io.springfox:springfox-swagger-ui:2.9.2")
+
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
