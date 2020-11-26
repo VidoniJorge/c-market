@@ -7,25 +7,25 @@ import javax.persistence.*
 data class Cliente(
         @Id
         @Column(name = "id")
-        val id: String,
+        var id: String,
 
         @Column(name = "nombre")
-        val nombre: String,
+        var nombre: String,
 
         @Column(name = "apellidos")
-        val apellido: String,
+        var apellido: String,
 
         @Column(name = "celular")
-        val celular: Int,
+        var celular: Int,
 
         @Column(name = "direccion")
-        val direccion: String,
+        var direccion: String,
 
         @Column(name = "correo_electronico")
-        val correoElectronico: String,
+        var correoElectronico: String,
 
-        @OneToMany(mappedBy = "client")
-        val compras: List<Compra>?
+        @OneToMany(mappedBy = "cliente")
+        var compras: List<Compra>?
 ) {
     constructor() : this("", "", "", 0, "", "", null)
 

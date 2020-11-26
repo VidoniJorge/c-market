@@ -6,18 +6,19 @@ import javax.persistence.*
 @Table(name = "compras_productos")
 class ComprasProducto(
         @EmbeddedId
-        val comprasProducto: ComprasProductoPK,
+        var comprasProducto: ComprasProductoPK,
 
         @Column(name = "cantidad")
-        val cantidad: Int,
+        var cantidad: Int,
 
         @Column(name = "total")
-        val total: Double,
+        var total: Double,
 
         @Column(name = "estado")
-        val estado: Boolean,
+        var estado: Boolean,
 
         @ManyToOne
+        @MapsId("idCompra")
         @JoinColumn(name = "id_compra", insertable = false, updatable = false)
         var compra: Compra?,
 

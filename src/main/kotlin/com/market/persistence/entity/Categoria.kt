@@ -8,16 +8,16 @@ data class Categoria(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id_categoria")
-        val idCategoria: Int,
+        var idCategoria: Int,
 
         @Column(name = "description")
-        val descripcion: String,
+        var descripcion: String,
 
         @Column(name = "estado")
-        val estado: Boolean,
+        var estado: Boolean,
 
         @OneToMany(mappedBy = "categoria")
-        val productos: List<Producto>?
+        var productos: List<Producto>?
 ) {
     constructor() : this(0, "", false, null)
 }

@@ -7,5 +7,5 @@ data class Product(var id: Int,
                    var stock: Int,
                    var active: Boolean,
                    var category: Category?) {
-    constructor() : this(0, "", 0,0.0, 0, false, null)
+    constructor() : this(0, "", 0, 0.0, 0, false, null)
 }

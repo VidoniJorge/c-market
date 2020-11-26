@@ -9,29 +9,29 @@ data class Compra(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id_compra")
-        val idCompra: Int,
+        var idCompra: Int,
 
-        @Column(name = "id_client")
-        val idClient: Int,
+        @Column(name = "id_cliente")
+        var idCliente: Int,
 
         @Column(name = "fecha")
-        val fecha: LocalDateTime,
+        var fecha: LocalDateTime,
 
         @Column(name = "medio_pago")
-        val medioPago: String,
+        var medioPago: String,
 
         @Column(name = "comentario")
-        val comentario: String,
+        var comentario: String,
 
         @Column(name = "estado")
-        val estado: String,
+        var estado: String,
 
         @ManyToOne
         @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-        val client: Cliente?,
+        var cliente: Cliente?,
 
-        @OneToMany(mappedBy = "compra")
-        val productos: List<ComprasProducto>?
+        @OneToMany(mappedBy = "compra", cascade = [CascadeType.ALL])
+        var productos: List<ComprasProducto>?
 ) {
     constructor() : this(0, 0, LocalDateTime.now(), "", "", "", null, null)
 }

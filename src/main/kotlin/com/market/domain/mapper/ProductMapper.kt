@@ -5,10 +5,9 @@ import com.market.persistence.entity.Producto
 import org.mapstruct.*
 import org.springframework.stereotype.Component
 
-@Mapper(componentModel = "spring",unmappedTargetPolicy = ReportingPolicy.IGNORE
-        , uses = [
-    CategoryMapper::class
-])
+@Mapper(componentModel = "spring",
+        unmappedTargetPolicy = ReportingPolicy.IGNORE,
+        uses = [ CategoryMapper::class ])
 interface ProductMapper {
 
     @Mappings(

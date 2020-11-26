@@ -7,8 +7,8 @@ import javax.persistence.Embeddable
 @Embeddable
 class ComprasProductoPK(
         @Column(name = "id_compra")
-        val idCompra: Int,
+        var idCompra: Int,
         @Column(name = "id_producto")
-        val idProducto: Int) : Serializable {
+        var idProducto: Int) : Serializable {
     constructor() : this(0, 0)
 }
