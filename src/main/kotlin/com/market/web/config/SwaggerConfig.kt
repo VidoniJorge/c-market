@@ -13,7 +13,6 @@ class SwaggerConfig {
 
     @Bean
     fun api(): Docket {
-        println("SWAGGER")
         return Docket(DocumentationType.SWAGGER_2) // Indicamos el tipo de documentacion
                 .select() // Indicamos que queremos que se documente
                 .apis(RequestHandlerSelectors.basePackage("com.market.web.controller"))
